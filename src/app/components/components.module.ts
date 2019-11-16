@@ -7,7 +7,8 @@ import { AddButtonComponent } from './add-button';
 import { SubtractButtonComponent } from './subtract-button';
 import { ShowNumberComponent } from './show-number';
 import { NavigationBarComponent } from './navigation-bar';
-import { HighlightComponent } from './highlight.component';
+import { HighlightComponent } from './highlight';
+import { MainContentComponent } from './main-content';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { HighlightComponent } from './highlight.component';
     SubtractButtonComponent,
     ShowNumberComponent,
     NavigationBarComponent,
-    HighlightComponent
+    HighlightComponent,
+    MainContentComponent
   ],
   exports: [
     GeneralContainerComponent,
@@ -31,7 +33,8 @@ import { HighlightComponent } from './highlight.component';
     SubtractButtonComponent,
     ShowNumberComponent,
     NavigationBarComponent,
-    HighlightComponent
+    HighlightComponent,
+    MainContentComponent
   ]
 })
 export class ComponentsModule { }
