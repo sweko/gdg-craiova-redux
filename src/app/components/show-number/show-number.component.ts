@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Statemax } from 'src/app/services/state-management-service';
 
 @Component({
   selector: 'show-number',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowNumberComponent implements OnInit {
 
-  @Input() value: number;
+  value: number;
 
-  constructor() { }
+  constructor(private statemax: Statemax) { }
 
   ngOnInit() {
+    this.value = this.statemax.state.value;
   }
 
 }
