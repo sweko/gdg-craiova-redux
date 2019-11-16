@@ -10,10 +10,16 @@ export class ShowNumberComponent implements OnInit {
 
   value: number;
 
-  constructor(private statemax: Statemax) { }
+  constructor(private statemax: Statemax) {
+    statemax.register(this.refresh);
+  }
+
+  refresh = () => {
+    this.value = this.statemax.getState().value;
+  };
 
   ngOnInit() {
-    this.value = this.statemax.state.value;
+    this.refresh();
   }
 
 }

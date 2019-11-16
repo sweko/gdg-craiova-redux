@@ -14,7 +14,8 @@ export class AddButtonComponent implements OnInit {
   }
 
   add() {
-    this.statemax.state.value = this.statemax.state.value + 1;
+    const value = this.statemax.getState().value + 1;
+    this.statemax.setState({ value });
   }
 
 }
