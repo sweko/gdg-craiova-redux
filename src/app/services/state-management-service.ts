@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ActionType, actions } from './actions';
 
 export interface State {
     value: number;
@@ -24,8 +25,9 @@ export class Statemax {
         }
     }
 
-    public setState(newState: State) {
-        this.state = newState;
+    public doSomething(actionType: ActionType) {
+        const action = actions.find(act => act.type === actionType)
+        this.state = action.action(this.state);
         this.notifyListeners();
     }
 

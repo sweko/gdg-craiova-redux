@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Statemax } from 'src/app/services/state-management-service';
+import { ActionType } from 'src/app/services/actions';
 
 @Component({
   selector: 'subtract-button',
@@ -16,8 +17,7 @@ export class SubtractButtonComponent implements OnInit {
   }
 
   subtract() {
-    const value = this.statemax.getState().value - 1;
-    this.statemax.setState({ value });
+    this.statemax.doSomething(ActionType.DecrementValue);
   }
 
 }
