@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'navigation-bar',
@@ -11,5 +11,7 @@ export class NavigationBarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() value: number;
 
 }

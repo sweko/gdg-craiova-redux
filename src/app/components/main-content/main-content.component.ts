@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'main-content',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
+  @Input() value: number;
+
+  @Output() changeValue: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  doChangeValue(number) {
+    this.changeValue.emit(number);
   }
 
 }

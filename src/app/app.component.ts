@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'gdg-craiova-redux';
+
+  @Input() value: number = 10;
+
+  @Output() changeValue: EventEmitter<number> = new EventEmitter();
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+  doChangeValue(number) {
+    this.value = number;
+  }
+
 }
