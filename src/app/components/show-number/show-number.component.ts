@@ -16,4 +16,8 @@ export class ShowNumberComponent implements OnInit {
     this.value = this.statemax.state.value;
   }
 
+  refresh() {
+    this.value = this.statemax.state.value;
+  }
+
 }
