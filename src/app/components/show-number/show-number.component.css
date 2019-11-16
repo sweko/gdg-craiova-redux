@@ -1,5 +1,6 @@
 .number {
     border: solid 2px blue;
+    color: black;
     border-radius: 10%;
     font-size: xx-large;
     width: 100px;

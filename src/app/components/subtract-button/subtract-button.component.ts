@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { StateMex } from 'src/app/service/state-service';
 
 @Component({
   selector: 'subtract-button',
@@ -7,16 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SubtractButtonComponent implements OnInit {
 
-  @Input() value: number;
-  @Output() clicked: EventEmitter<number> = new EventEmitter()
-
-  constructor() { }
+  constructor(private statemex: StateMex) { }
 
   ngOnInit() {
   }
 
   subtract() {
-    this.clicked.emit(this.value - 1);
+    const value = this.statemex.getState().value - 1;
+    this.statemex.setState({value});
   }
 
 }

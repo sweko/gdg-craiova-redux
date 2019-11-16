@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { StateMex } from 'src/app/service/state-service';
 
 @Component({
   selector: 'show-number',
@@ -7,11 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowNumberComponent implements OnInit {
 
-  @Input() value: number;
+  value: number;
 
-  constructor() { }
+  constructor(private statemex: StateMex) { }
 
   ngOnInit() {
+    this.statemex.registerListener(this.refresh);
+    this.value = this.statemex.getState().value;
+  }
+
+  refresh = () => {
+    this.value = this.statemex.getState().value;
   }
 
 }
